@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Modern Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">Buscaminas</h2>
+            <p id="modal-msg">Selecciona una dificultad para empezar:</p>
+            <div class="level-options">
+                <button onclick="setDifficulty('beginner')">Principiante (9x9)</button>
+                <button onclick="setDifficulty('intermediate')">Intermedio (16x16)</button>
+                <button onclick="setDifficulty('expert')">Experto (30x16)</button>
+                <button onclick="toggleCustom()">Personalizado</button>
+            </div>
+            
+            <div id="custom-form" class="hidden">
+                <div class="input-group">
+                    <input type="number" id="custom-rows" placeholder="Filas" min="5" max="50">
+                    <input type="number" id="custom-cols" placeholder="Cols" min="5" max="50">
+                    <input type="number" id="custom-mines" placeholder="Minas" min="1">
+                </div>
+                <button onclick="setDifficulty('custom')" class="btn-play">¡Empezar!</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="game-container">
+        <header class="game-header">
+            <div class="stat-box" title="Minas restantes">💣 <span id="mine-count">000</span></div>
+            <button id="reset-btn" class="main-btn">😊</button>
+            <div class="stat-box" title="Tiempo">⏱️ <span id="timer">000</span></div>
+        </header>
+
+        <div class="zoom-controls">
+            <button onclick="changeZoom(-4)">🔍−</button>
+            <button onclick="changeZoom(4)">🔍+</button>
+        </div>
+
+        <div class="board-wrapper">
+            <div id="board" class="board"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
