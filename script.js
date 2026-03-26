@@ -219,3 +219,14 @@ function getNumberColor(n) {
 }
 
 resetBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+
+window.addEventListener('click', (e) => {
+    // Si el elemento donde se hizo click es exactamente el overlay (el fondo)
+    if (e.target === modal) {
+        // Solo lo cerramos si ya hay una partida en curso o iniciada 
+        // (para evitar que el usuario se quede sin tablero al abrir la web)
+        if (board.length > 0) {
+            modal.classList.add('hidden');
+        }
+    }
+});
