@@ -31,6 +31,8 @@ body {
     cursor: pointer;
 }
 
+
+
 .modal-content {
     background: var(--panel-color);
     padding: 2.5rem;
